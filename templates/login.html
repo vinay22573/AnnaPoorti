@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block body %}
+<div style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+    <form action="/login" method="POST" style="margin-bottom: 20px;">
+        <div style="margin-bottom: 20px;">
+            <img src="img_avatar2.png" alt="Avatar" style="width: 100px; border-radius: 50%;">
+        </div>
+
+        <div style="padding: 16px; text-align: left;">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+
+            <button type="submit" style="background-color: #4caf50; color: white; padding: 14px 20px; margin-top: 10px; border: none; border-radius: 4px; cursor: pointer; width: 100%;">Login</button>
+
+            <label style="display: block; margin-top: 10px;">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div style="background-color:#f1f1f1; padding: 16px; border-radius: 0 0 5px 5px;">
+            <button type="button" style="padding: 10px 18px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">Cancel</button>
+            <span style="float: right;">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+
+    <div style="text-align: center;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div style="padding: 15px; margin-top: 20px; background-color: {% if category == 'primary' %}#007bff{% elif category == 'danger' %}#dc3545{% endif %}; color: white; border-radius: 4px; display: inline-block;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+{% endblock body %}

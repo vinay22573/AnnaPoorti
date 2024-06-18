@@ -1,0 +1,25 @@
+<!-- add_reported_area.html -->
+{% extends "base.html" %}
+
+{% block title %}Add Reported Area{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+  <h2>Add Reported Area</h2>
+  <form action="{{ url_for('add_reported_area') }}" method="post">
+    <div class="form-group">
+      <label for="user_id">User ID:</label>
+      <input type="text" id="user_id" name="user_id" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="report_date">Report Date:</label>
+      <input type="date" id="report_date" name="report_date" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="area_description">Area Description:</label>
+      <textarea id="area_description" name="area_description" class="form-control" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}

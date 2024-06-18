@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock %}
+{% block body %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #093b14; /* Dark green background color */
+            color: white; /* White text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(23, 125, 26, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .content-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .content-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .content-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .content-text ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .image {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .donate-button {
+            text-align: center;
+        }
+
+        .donate-button a {
+            padding: 15px 40px;
+            font-size: 24px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+    <div class="container">
+        <div class="header">
+            <h1>About Us</h1>
+        </div>
+        <div class="content">
+            <div class="content-text">
+                <h2>Our Goal is to Help the Needy...</h2>
+                <p>At Annapoorti, we are dedicated to fighting hunger and nourishing lives in our community. Since 2000, we have been committed to making a positive impact through food donations and volunteer efforts.</p>
+                <ul>
+                    <li>* Food Collection and Distribution</li>
+                    <li>* Volunteer Engagement</li>
+                    <li>* Partnerships with NGOs</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="https://th.bing.com/th/id/R.5c2044a95e6efdf8332448e38c258b14?rik=pisijesO8P0d9A&riu=http%3a%2f%2fwww.africanexaminer.com%2fwp-content%2fuploads%2fpoverty_children-300x199.png&ehk=UjIk3OSO%2fqugV9%2fzbpdkREHLTE4pONMjM3f3kfkDRhQ%3d&risl=&pid=ImgRaw&r=0" alt="Poor children">
+            </div>
+        </div>
+        <div class="donate-button">
+            <a href="{{ url_for('add_donation') }}">Donate Now</a>
+        </div>
+    </div>
+{% endblock body %}

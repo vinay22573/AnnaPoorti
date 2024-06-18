@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+Final Order
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-4">
+  <h1>Final Order</h1>
+
+  <h2>Ordered Services</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Service ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Duration (minutes)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in ordered_services %}
+      <tr>
+        <td>{{ service.Service_ID }}</td>
+        <td>{{ service.Name }}</td>
+        <td>Rs {{ service.Price }}</td>
+        <td>{{ service.Duration }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2>Total Price</h2>
+  <p>Total Price: Rs {{ total_price }}</p>
+
+  <form action="{{ url_for('confirm_service') }}">
+    <button type="submit" class="btn btn-primary">Confirm Service</button>
+  </form>
+</div>
+{% endblock body %}

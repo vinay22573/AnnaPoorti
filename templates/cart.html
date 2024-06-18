@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cart
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-4">
+  <h1>Cart</h1>
+  <p>Welcome to your cart. Here you can find a list of products added to your cart.</p>
+  
+  <div class="row">
+    {% for cart_item in cart_items %}
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ cart_item.product.Name }}</h5>
+          <p class="card-text">Quantity: {{ cart_item.quantity }}</p>
+          <p class="card-text">Price: {{ cart_item.product.Price }}</p>
+          <!-- Remove from Cart button -->
+          <form action="{{ url_for('remove_from_cart') }}" method="POST">
+              <input type="hidden" name="product_id" value="{{ cart_item.product.Product_ID }}">
+              <input type="submit" value="Remove from Cart" class="btn btn-danger">
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Place Order button -->
+  <div class="row">
+    <div class="col-md-12">
+      <form action="{{ url_for('final_order') }}" method="POST">
+        <input type="submit" value="Place Order" class="btn btn-success">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}

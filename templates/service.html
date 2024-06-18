@@ -1,0 +1,56 @@
+<!-- service.html -->
+{% extends "base.html" %}
+
+{% block title %}Our Services{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+  <h2>What We Do?</h2>
+  <p>Welcome to our services!</p>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="https://iskcondwarka.org/wp-content/uploads/2022/06/Food-Donation-for-the-Poor-1600326877.jpg" class="card-img-top service-img" alt="Donate Food Image">
+        <div class="card-body">
+          <h5 class="card-title">Donate Food</h5>
+          <p class="card-text">Support our mission by donating food to those in need.</p>
+          <a href="{{ url_for('add_donation') }}" class="btn btn-primary">Donate Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg" class="card-img-top service-img" alt="Report Areas Image">
+        <div class="card-body">
+          <h5 class="card-title">Report Areas</h5>
+          <p class="card-text">Help us identify areas that need assistance by reporting them.</p>
+          <a href="{{ url_for('reported_areas') }}" class="btn btn-primary">Report Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="https://media.istockphoto.com/id/1346387766/vector/hand-holding-dollars-save-money-icon-salary-money-invest-finance.jpg?s=612x612&w=0&k=20&c=LAgyg3IEYHbEi6AS6b9zIB1vvUG9H4gwImiQmeMBFtY=" class="card-img-top service-img" alt="Fundraiser Image">
+        <div class="card-body">
+          <h5 class="card-title">Fundraiser</h5>
+          <p class="card-text">Join our fundraising campaigns and contribute to making a difference.</p>
+          <a href="{{ url_for('add_fundraising_donation') }}" class="btn btn-primary">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <a href="{{ url_for('add_fundraising_donation') }}" class="btn btn-lg btn-success">Join Us</a>
+  </div>
+</div>
+<style>
+  .service-img {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+</style>
+{% endblock body %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Fundraising Campaigns{% endblock %}
+
+{% block body %}
+<style>
+  body {
+    background-image: url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8468.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1715299200&semt=ais_user');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff; /* Set text color to white for better visibility */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* CSS to center the heading */
+  h1 {
+      text-align: center; /* Center the text horizontally */
+  }
+
+  /* Adjust table style for better visibility */
+  table {
+    color: #fff; /* Set text color to white */
+  }
+
+  th, td {
+    border: 1px solid #fff; /* Set border color to white */
+    padding: 8px; /* Add padding for better readability */
+  }
+
+  th {
+    background-color: rgba(246, 238, 238, 0.5); /* Add opacity to header background */
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Add opacity to even rows */
+  }
+
+  tr:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Add opacity to hovered rows */
+  }
+</style>
+
+<div class="container mt-4">
+  <h1>WE NEED YOUR HELP</h1>
+
+  <h2>Fundraising Campaigns</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Campaign ID</th>
+        <th>Campaign Name</th>
+        <th>Description</th>
+        <th>Target Amount</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for campaign in campaigns %}
+      <tr>
+        <td>{{ campaign.CampaignID }}</td>
+        <td>{{ campaign.CampaignName }}</td>
+        <td>{{ campaign.Description }}</td>
+        <td>{{ campaign.TargetAmount }}</td>
+        <td>{{ campaign.StartDate }}</td>
+        <td>{{ campaign.EndDate }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock body %}

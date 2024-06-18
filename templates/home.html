@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block body %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .header {
+        background-color: #28a745; /* Green background color */
+        color: white; /* White text color */
+        text-align: center; /* Center-align text */
+        padding: 20px; /* Add some padding */
+        font-weight: bold; /* Bold text */
+        font-size: 24px; /* Increase font size */
+    }
+    .section {
+        width: 33.33%; /* Set each section to one-third of the width */
+        float: left; /* Float sections to the left */
+        text-align: center; /* Center-align text */
+        padding: 30px; /* Add some padding */
+        font-weight: bold; /* Bold text */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+    .section h2 {
+        color: #333; /* Dark gray text color */
+    }
+    .section img {
+        width: 100%; /* Make images take up full width of their container */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 300px; /* Limit maximum width of images */
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Working Together to End Hunger</h1>
+    <p>Join us in our mission to combat hunger and support our communities. At Annapoorti, we're dedicated to providing essential resources to individuals and families in need.</p>
+</div>
+
+<div class="section">
+    <img src="https://borgenproject.org/wp-content/uploads/Fighting_Hunger_in_India.jpg" alt="Impacted Image">
+    <h2>100K+<br>Humans Impacted</h2>
+</div>
+
+<div class="section">
+    <img src="https://assets.telegraphindia.com/telegraph/2020/Dec/1608132733_shutterstock_630024287.jpg" alt="Donations Image">
+    <h2>35K+<br>Donations</h2>
+</div>
+
+<div class="section">
+    <img src="https://www.thestatesman.com/wp-content/uploads/2019/12/QT-O-10.jpg" alt="Assisted Communities Image">
+    <h2>200+<br>Assisted Communities</h2>
+</div>
+{% endblock body %}

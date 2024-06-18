@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Admin Inventory
+{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <h1>Admin Inventory</h1>
+        <form method="POST">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Available Quantity</th>
+                        <th>Available in Cart</th>
+                        <th>Total Quantity</th>
+                        <th>Quantity to Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in available_products %}
+                    <tr>
+                        <td>{{ product.Product_ID }}</td>
+                        <td>{{ product.Name }}</td>
+                        <td>{{ product.Quantity }}</td>
+                        <td>
+                            {% set index = loop.index0 %}
+                            {{ product_quantities[index] if product_quantities[index] is defined else 0 }}
+                        </td>
+                        <td>
+                            {% set total_quantity = product.Quantity + (product_quantities[index] if product_quantities[index] is defined else 0) %}
+                            {{ total_quantity }}
+                        </td>
+                        <td>
+                            <input type="number" name="quantity_{{ product.Product_ID }}" value="">
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit">Update Quantities</button>
+        </form>
+    </div>
+{% endblock body %}

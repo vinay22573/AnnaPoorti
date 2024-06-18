@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Food Donations{% endblock %}
+
+{% block body %}
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <div class="container">
+        <h2>Food Donations</h2>
+        <form action="/add_donation" method="post" class="form">
+            <div class="form-group">
+                <label for="userID">User ID:</label>
+                <input type="text" id="userID" name="userID" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="donationDate">Donation Date:</label>
+                <input type="date" id="donationDate" name="donationDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="foodDescription">Food Description:</label>
+                <input type="text" id="foodDescription" name="foodDescription" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" name="quantity" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock body %}

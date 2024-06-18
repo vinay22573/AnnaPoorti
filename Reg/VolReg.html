@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="Volreg.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Annapoorti</div>
+        <img src="small-icon.png" alt="Small Icon">
+    </div>
+    
+    <div class="container">
+        <div class="left-side">
+            <img src="imageatRegistration.png" alt="Image">
+        </div>
+        <div class="right-side">
+            <h1>Create Account</h1>
+            <div class="social-login">
+                <!-- Sign in with Google -->
+                <a href="#" class="google-btn"><img src="google-icon.png" alt="Google Icon"> Sign in with Google</a>
+                <!-- Sign in with Facebook -->
+                <a href="#" class="facebook-btn"><img src="facebook-icon.png" alt="Facebook Icon"> Sign in with Facebook</a>
+            </div>
+            <!-- Dropdown for registration type -->
+            <div>
+                <label for="register-as">Register As:</label>
+                <select id="register-as" name="register-as">
+                    <option value="org">Organisation</option>
+                    <option value="vol">Volunteer</option>
+                </select>
+            </div>
+            <!-- Remaining code unchanged -->
+            <form action="#" method="post">
+                <div>
+                    <label for="id1">UserName</label>
+                    <input type="text" id="id1" name="username" placeholder="Enter your Name/CompanyName">
+                    <label for="id3">Phone</label>
+                    <input type="tel" id="id3" name="PhoneNumber" placeholder="Enter your PhoneNumber">
+                    <label for="id4">Email</label>
+                    <input type="email" id="id4" name="email" placeholder="Email Address">
+                    <label for="id2">Password</label>
+                    <input type="password" id="id2" name="password" placeholder="abcd@1234">
+                </div>
+                <input type="submit" value="Create Account" style="background-color: rgb(2, 103, 2); color: white;">
+            </form>
+            <div class="login-link">
+                Already have an account? <a href="#">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

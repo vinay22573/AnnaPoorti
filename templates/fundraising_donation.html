@@ -1,0 +1,55 @@
+<!-- fundraising_donation.html -->
+{% extends "base.html" %}
+
+{% block title %}Fundraising Donation{% endblock %}
+
+{% block body %}
+<style>
+    /* Add your CSS styles here */
+    .donation-form {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .donation-form label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .donation-form input[type="text"],
+    .donation-form input[type="date"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .donation-form input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .donation-form input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<h2>Fundraising Donation</h2>
+<form class="donation-form" action="/add_fundraising_donation" method="post">
+    <label for="userID">User ID:</label>
+    <input type="text" id="userID" name="userID">
+    <label for="campaignID">Campaign ID:</label>
+    <input type="text" id="campaignID" name="campaignID">
+    <label for="donationDate">Donation Date:</label>
+    <input type="date" id="donationDate" name="donationDate">
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" name="amount">
+    <input type="submit" value="Submit">
+</form>
+{% endblock body %}

@@ -52,11 +52,7 @@
 
 ---
 
-## 📸 Screenshots
 
-> _Add screenshots of your main pages here (Home, Donate, Campaigns, Admin Panel, etc.)_
-
----
 
 ## 🏁 Getting Started
 
